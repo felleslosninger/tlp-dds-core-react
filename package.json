@@ -1,0 +1,14 @@
+{
+  "name": "@digdir/dds-core-react",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Core components of the Digdir design system",
+  "repository": "https://github.com/felleslosninger/tlp-dds-core-react.git",
+  "author": "Digdir design system team",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "react": "^17.0.2",
+    "typescript": "^4.5.5"
+  }
+}
