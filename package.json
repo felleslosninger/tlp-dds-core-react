@@ -6,9 +6,29 @@
   "repository": "https://github.com/felleslosninger/tlp-dds-core-react.git",
   "author": "Digdir design system team",
   "license": "BSD-3-Clause",
+  "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@digdir/ds-core-css": "^4.0.0",
+    "@storybook/addon-actions": "^6.5.0-alpha.42",
+    "@storybook/addon-essentials": "^6.5.0-alpha.42",
+    "@storybook/addon-interactions": "^6.5.0-alpha.42",
+    "@storybook/addon-links": "^6.5.0-alpha.42",
+    "@storybook/builder-webpack5": "6.5.0-alpha.42",
+    "@storybook/manager-webpack5": "^6.5.0-alpha.42",
+    "@storybook/react": "^6.5.0-alpha.42",
+    "@storybook/testing-library": "^0.0.9",
     "@types/react": "^17.0.39",
+    "babel-loader": "^8.2.3",
     "react": "^17.0.2",
-    "typescript": "^4.5.5"
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "typescript": "^4.5.5",
+    "webpack": "^5.69.1"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build:docs": "build-storybook"
   }
 }
