@@ -14,20 +14,34 @@ module.exports = {
   },
   // Add rules to webpack config
   webpackFinal: async (config, { configType }) => {
-    // Resolve raw import of SVG files as source code
+    // Remove Storybooks default resolution of SVG files
+    const fileLoaderRule = config.module.rules.find(
+      (rule) => rule.test && rule.test.test('.svg'),
+    )
+    fileLoaderRule.exclude = /\.svg$/
+
+    // Resolve SCSS files
     config.module.rules.push({
-      test: /\.svg/,
-      type: 'asset/source',
-    })
-    // Resolve SCSS as CSS modules
-    config.module.rules.push({
-      test: /\.(scss)$/,
+      test: /\.scss$/,
       use: [
         { loader: 'style-loader' }, // Inject result into DOM as style block
-        { loader: 'css-loader', options: { modules: true } }, // Convert CSS to Javascript to be bundled and rename to CSS modules
+        { loader: 'css-loader' }, // Resolve import of CSS in Javascript
         { loader: 'sass-loader' }, // Convert SCSS to CSS
       ],
     })
+    // Resolve SVG files
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            typescript: true,
+          },
+        },
+      ],
+    })
+
     return config
   },
 }
