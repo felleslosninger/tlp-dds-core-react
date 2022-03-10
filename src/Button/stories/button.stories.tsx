@@ -29,8 +29,38 @@ Primary.args = {
   children: 'Primærknapp',
 }
 
+export const Secondary = Template.bind({})
+Secondary.args = {
+  children: 'Sekundærknapp',
+  variant: 'secondary',
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  children: 'Deaktivert',
+  disabled: true,
+}
+
 export const IconLeft = Template.bind({})
 IconLeft.args = {
-  children: 'Primærknapp',
+  children: 'Ikon',
   iconLeft: <Image />,
+}
+
+export const IconRight = Template.bind({})
+IconRight.args = {
+  children: 'Ikon',
+  iconRight: <Image />,
+}
+
+export const Small = Template.bind({})
+Small.args = {
+  children: 'Small',
+  size: 'small',
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  children: 'Large',
+  size: 'large',
 }
