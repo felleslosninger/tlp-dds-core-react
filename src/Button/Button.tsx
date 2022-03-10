@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import cl from 'classnames'
 import '@digdir/ds-core-css/build/src/button.scss'
 
@@ -45,6 +45,7 @@ const Button = ({
   iconRight,
   className,
   disabled = false,
+  onClick,
   ...rest
 }: ButtonProps) => {
   const classPrefix = 'dds-button'
@@ -57,8 +58,12 @@ const Button = ({
     { [`${classPrefix}--icon-right`]: iconRight },
   )
 
+  if (disabled) {
+    onClick = null
+  }
+
   return (
-    <button className={cl(baseClasses, className)} {...rest}>
+    <button className={cl(baseClasses, className)} onClick={onClick} {...rest}>
       {iconLeft}
       {children}
       {iconRight}
