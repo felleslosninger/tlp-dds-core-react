@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build:docs": "build-storybook",
+    "build:docs": "build-storybook -o ./docs",
     "lint": "eslint src --ext 'js,jsx,ts,tsx'",
     "format": "prettier . --write",
     "format:check": "prettier . --check"
