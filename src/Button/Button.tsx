@@ -19,7 +19,7 @@ export interface ButtonProps
    * Default value is a passive choice (no-operation).
    * @default "medium"
    */
-  size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large'
+  size?: 'small' | 'medium' | 'large'
   /**
    * Disable interaction with the button, but keep it available for screen reader.
    * @default false
