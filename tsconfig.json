@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./build",
+    "declarationDir": "types/",
+    "module": "esnext",
+    "target": "es6",
+    "jsx": "react",
+    "emitDeclarationOnly": true,
+    "allowJs": false,
+    "noEmit": false,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
+  },
+  "include": ["./src"],
+  "exclude": ["./src/**/stories", "**/*.test.ts", "**/*.test.tsx"]
+}

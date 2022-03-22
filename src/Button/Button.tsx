@@ -59,11 +59,16 @@ const Button = ({
   )
 
   if (disabled) {
-    onClick = null
+    onClick = undefined
   }
 
   return (
-    <button className={cl(baseClasses, className)} onClick={onClick} {...rest}>
+    <button
+      className={cl(baseClasses, className)}
+      onClick={onClick}
+      aria-disabled={disabled}
+      {...rest}
+    >
       {iconLeft}
       {children}
       {iconRight}
