@@ -1122,10 +1122,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@digdir/ds-core-css@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/@digdir/ds-core-css/-/ds-core-css-4.0.0.tgz"
-  integrity sha512-W3JQQpBmHl+43uUxvT+m5AHqs6AD4McL56xN1xRHMb5CG/QlMCgUEgVcI1piPfBUXIrweSBSZyyVGiKlXY7vzw==
+"@digdir/ds-core-css@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@digdir/ds-core-css/-/ds-core-css-5.3.0.tgz#1e9af14add0f1e24085fe12dabf87f630f6e57a7"
+  integrity sha512-pGbiHjQw/edwd16mLTSXlHl+Scynfsn/WRU++wxXr2n6XSWmSk/sWpuxnPI3c+EKg9sie0rZRmJIxbnA0lYD7A==
   dependencies:
     "@digdir/ds-tokens" "^1.8.1"
 
