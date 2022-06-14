@@ -1,0 +1,1 @@
+declare module '@digdir/ds-tokens/build/tokens';

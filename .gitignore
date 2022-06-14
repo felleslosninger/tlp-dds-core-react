@@ -1,9 +1,5 @@
-node_modules/
-lib/
-.idea/
-.vscode/
-.DS_Store
-coverage/
 *.log
-build/
-dist/
+.DS_Store
+node_modules
+.cache
+dist

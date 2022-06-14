@@ -1,27 +1,35 @@
 {
+  // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
+  "include": ["src", "types"],
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./build",
-    "declarationDir": "types/",
     "module": "esnext",
-    "target": "es6",
-    "jsx": "react",
-    "emitDeclarationOnly": true,
-    "allowJs": false,
-    "noEmit": false,
-    "strictNullChecks": true,
-    "sourceMap": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "noImplicitAny": false,
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    // output .d.ts declaration files for consumers
     "declaration": true,
-    "skipLibCheck": true,
+    // output .js.map sourcemap files for consumers
+    "sourceMap": true,
+    // match output dir to input dir. e.g. dist/index instead of dist/src/index
+    "rootDir": "./src",
+    // stricter type-checking for stronger correctness. Recommended by TS
     "strict": true,
-    "strictFunctionTypes": false,
+    // linter checks for common issues
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // use Node's module resolution algorithm, instead of the legacy TS one
+    "moduleResolution": "node",
+    // transpile JSX to React.createElement
+    "jsx": "react",
+    // interop between ESM and CJS modules. Recommended by TS
     "esModuleInterop": true,
+    // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
+    "skipLibCheck": true,
+    // error out if import and file system have a casing mismatch. Recommended by TS
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
-  },
-  "include": ["./src"],
-  "exclude": ["./src/**/stories", "**/*.test.ts", "**/*.test.tsx"]
+    // `tsdx build` ignores this option, but it is commonly used when type-checking separately with `tsc`
+    "noEmit": true
+  }
 }
