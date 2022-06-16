@@ -1,7 +1,9 @@
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components';
 import {Heading, Body} from "../Typography";
-import tokens from "@digdir/ds-tokens/build/tokens";
+import tokens from "../../utils/tokens";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export interface NavigationCardProps {
     title?: string;
@@ -35,6 +37,7 @@ export const NavigationCard: FC<NavigationCardProps> = ({title = "Title", desc= 
         <Link backgroundColor={backgroundColor}>
             <Heading level={3} size="600">{title}</Heading>
             <Body size="300">{desc}</Body>
+            <FontAwesomeIcon icon={regular('coffee')} />
         </Link>
     );
 };

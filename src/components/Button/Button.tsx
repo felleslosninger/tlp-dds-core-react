@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled, {css} from "styled-components";
-import tokens from '@digdir/ds-tokens/build/tokens';
+import tokens from "../../utils/tokens";
 
 export interface ButtonProps {
     fontSize?: string;
@@ -20,7 +20,7 @@ const MyButton = styled.button<ButtonProps>`
   font-weight: 500;
   height: 40px;
   padding: 0 20px;
-  font-size: ${props => props.fontSize === '18px' ? "18px" : "16px"};
+  font-size: ${({fontSize}) => fontSize === '18px' ? "18px" : "16px"};
 
   &:hover {
     background-color: ${tokens.color.interface["interaction-light"]};
@@ -47,7 +47,6 @@ const MyButton = styled.button<ButtonProps>`
 `
 
 export const Button: FC<ButtonProps> = ({fontSize, type1, size, text}) => {
-
     return (
         <MyButton fontSize={fontSize} type1={type1} size={size}>
             {text}
