@@ -1,13 +1,14 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom';
-
-// @ts-ignore
-import { Primary as Button } from '../../../stories/Button.stories';
+import { shallow } from 'enzyme';
+import { Button } from './Button';
 
 describe('Button', () => {
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<Button />, div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
+  it('renders without crashing', () => {
+    shallow(<Button>Click here</Button>);
+  });
+
+  it('has text', () => {
+    const button = shallow(<Button>Click here</Button>);
+    expect(button.text()).toEqual('Click here');
+  });
 });

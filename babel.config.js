@@ -9,10 +9,3 @@ module.exports = {
         '@babel/plugin-proposal-class-properties',
     ]
 }
-
-module.exports = function (api) {
-    api.cache(true);
-    return {
-        plugins: ['macros'],
-    }
-}
