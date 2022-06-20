@@ -4,7 +4,6 @@ import {
   TeaserCard,
   TeaserCardProps,
 } from '../src/components/TeaserCard/TeaserCard';
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const meta: Meta = {
   title: 'Teaser Card',
@@ -31,4 +30,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   imageSrc: 'img/png/five.jpg',
+  alignment: 'vertical',
+  meta: ['16. des 2022'],
 };

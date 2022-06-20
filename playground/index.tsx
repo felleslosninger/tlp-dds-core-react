@@ -21,13 +21,27 @@ const App = () => {
       <Section backgroundColor="grey">
         <Row>
           <Col xl={4}>
-            <TeaserCard></TeaserCard>
+            <TeaserCard
+              imageSrc="img/png/one.jpg"
+              meta={['16. des 2022']}
+            ></TeaserCard>
           </Col>
           <Col xl={4}>
-            <TeaserCard></TeaserCard>
+            <TeaserCard imageSrc="img/png/two.jpg"></TeaserCard>
           </Col>
           <Col xl={4}>
-            <TeaserCard></TeaserCard>
+            <TeaserCard imageSrc="img/png/three.jpg"></TeaserCard>
+          </Col>
+        </Row>
+      </Section>
+      <Section backgroundColor="white">
+        <Row>
+          <Col xl={12}>
+            <TeaserCard
+              imageSrc="img/png/one.jpg"
+              meta={['16. des 2022']}
+              alignment="horizontal"
+            ></TeaserCard>
           </Col>
         </Row>
       </Section>

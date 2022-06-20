@@ -8,10 +8,7 @@ export interface TeaserCardProps {
   title?: string;
   desc?: string;
   imageSrc?: string;
-  alignment?: 'vertical' | 'horizontal';
-}
-
-export interface Test {
+  meta?: string[];
   alignment?: 'vertical' | 'horizontal';
 }
 
@@ -24,11 +21,13 @@ const S = {
     box-shadow: 0 0 0 1px ${tokens.color.neutral.grey['400']};
     border-radius: 8px;
     display: flex;
+    height: 100%;
 
     ${props => css`
       flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
-      max-width: ${props.alignment === 'vertical' ? '600px' : '1200px'};
+      max-width: ${props.alignment === 'vertical' ? '600px' : '1320px'};
     `}
+
     &:hover {
       box-shadow: 0 0 0 2px ${tokens.color.neutral.grey['800']};
     }
@@ -42,6 +41,7 @@ const S = {
     text-decoration: none;
     display: flex;
     align-items: center;
+    height: 100%;
 
     &:hover {
       color: inherit;
@@ -51,13 +51,14 @@ const S = {
       flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
     `}
   `,
-  ImageContainer: styled.div`
-    flex: 0 0 50%;
-    img {
-      width: 100%;
-      border-radius: 8px 8px 0 0;
-      display: block;
-    }
+  ImageContainer: styled.div<TeaserCardProps>`
+    flex: ${props => (props.alignment === 'vertical' ? 'auto' : '0 0 50%')};
+  `,
+  Image: styled.img<TeaserCardProps>`
+    width: 100%;
+    border-radius: ${props =>
+      props.alignment === 'vertical' ? '8px 8px 0 0' : '8px 0 0 8px'};
+    display: block;
   `,
   TextContainer: styled.div`
     padding: 32px;
@@ -67,6 +68,16 @@ const S = {
       margin-bottom: 0;
     }
   `,
+  MetaContainer: styled.div`
+    display: flex;
+  `,
+  MetaItem: styled(Body)`
+    margin-right: 16px;
+    margin-top: -8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  `,
 };
 
 export const TeaserCard: FC<TeaserCardProps> = ({
@@ -74,18 +85,25 @@ export const TeaserCard: FC<TeaserCardProps> = ({
   desc = defaultDesc,
   imageSrc,
   alignment = 'vertical',
+  meta = [],
 }) => {
+  const metaItems = meta.map(item => (
+    <S.MetaItem key={item} size="200">
+      {item}
+    </S.MetaItem>
+  ));
   return (
     <S.Card alignment={alignment}>
       <S.Link alignment={alignment}>
         {imageSrc && (
-          <S.ImageContainer>
-            <img src={imageSrc} alt="dsd" />
+          <S.ImageContainer alignment={alignment}>
+            <S.Image alignment={alignment} src={imageSrc} alt="" />
           </S.ImageContainer>
         )}
         <S.TextContainer>
           <TitleIcon>{title}</TitleIcon>
-          <Body size="300">{desc}</Body>
+          {meta.length > 0 && <S.MetaContainer>{metaItems}</S.MetaContainer>}
+          <Body size={alignment === 'vertical' ? '300' : '400'}>{desc}</Body>
         </S.TextContainer>
       </S.Link>
     </S.Card>

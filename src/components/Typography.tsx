@@ -29,6 +29,7 @@ export interface BodyProps {
    * 100: 12px --- 200: 14px --- 300: 16px --- 400: 18px
    */
   size?: '100' | '200' | '300' | '400';
+  className?: string;
   children?: React.ReactNode;
 }
 
@@ -171,8 +172,12 @@ export const Ingress: FC<IngressProps> = ({
   );
 };
 
-export const Body: FC<BodyProps> = ({ size = '400', children }) => {
-  return <S.Body size={size}>{children}</S.Body>;
+export const Body: FC<BodyProps> = ({ size = '400', children, className }) => {
+  return (
+    <S.Body size={size} className={className}>
+      {children}
+    </S.Body>
+  );
 };
 
 export const Interface: FC<InterfaceProps> = ({ size = '400', children }) => {

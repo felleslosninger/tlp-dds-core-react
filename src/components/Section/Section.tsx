@@ -8,6 +8,7 @@ export interface SectionProps {
   title?: string;
   desc?: string;
   backgroundColor?: 'grey' | 'white';
+  lineColor?: 'grey' | 'yellow' | 'blue' | 'red';
   children: React.ReactNode;
 }
 
@@ -37,15 +38,23 @@ const Styles = {
     margin-top: 24px;
   `,
 
-  Line: styled.div`
+  Line: styled.div<SectionProps>`
     height: 4px;
     width: 40px;
     border-radius: 40px;
-    background-color: ${tokens.color.brand.second['600']};
+    background-color: ${props => getLineColor(props.lineColor)};
     margin: 0 auto;
   `,
 
   Content: styled.div``,
+};
+
+const getLineColor = (lineColor: string) => {
+  if (lineColor === 'grey') {
+    return `${tokens.color.brand.second['600']}`;
+  } else {
+    return `${tokens.color.brand.second['600']}`;
+  }
 };
 
 export const Section: FC<SectionProps> = ({
@@ -53,6 +62,7 @@ export const Section: FC<SectionProps> = ({
   title = defaultTitle,
   desc = defaultDesc,
   backgroundColor = 'white',
+  lineColor = 'grey',
 }) => {
   return (
     <Styles.StyleSection backgroundColor={backgroundColor}>
@@ -61,7 +71,7 @@ export const Section: FC<SectionProps> = ({
           <Row className="justify-content-center">
             <Col xl={7}>
               <Styles.SectionHeading size="800">{title}</Styles.SectionHeading>
-              <Styles.Line></Styles.Line>
+              <Styles.Line lineColor={lineColor}></Styles.Line>
               <Styles.Ingress size="500">{desc}</Styles.Ingress>
             </Col>
           </Row>
