@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import tokens from '../../utils/tokens';
 import { Heading } from '../Typography';
-import { faArrowRight } from '@fortawesome/pro-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import FeatherIcon from 'feather-icons-react';
 
 export interface TitleIconProps {
   children: React.ReactNode;
@@ -20,11 +18,7 @@ export const TitleIcon: FC<TitleIconProps> = ({ children }) => {
   return (
     <Styled.Heading size="500">
       {children}
-      <FontAwesomeIcon
-        color={tokens.color.neutral.grey['800']}
-        fontSize="20px"
-        icon={faArrowRight}
-      />
+      <FeatherIcon icon="arrow-right" />
     </Styled.Heading>
   );
 };

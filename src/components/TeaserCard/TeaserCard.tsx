@@ -8,7 +8,23 @@ export interface TeaserCardProps {
   title?: string;
   desc?: string;
   imageSrc?: string;
-  meta?: string[];
+  metaItems?: string[];
+  alignment?: 'vertical' | 'horizontal';
+}
+
+interface CardProps {
+  alignment?: 'vertical' | 'horizontal';
+}
+
+interface LinkProps {
+  alignment?: 'vertical' | 'horizontal';
+}
+
+interface ImageContainerProps {
+  alignment?: 'vertical' | 'horizontal';
+}
+
+interface ImageProps {
   alignment?: 'vertical' | 'horizontal';
 }
 
@@ -16,96 +32,100 @@ const defaultTitle: string = 'Her er årets tre beste offentlige innovasjone';
 const defaultDesc: string =
   'I august blir det klart hvem som har gjennomført det aller beste digitaliseringsprosjektet i offentlig sektor. Nå er de tre finalistene til Digitaliseringsprisen 2022 klare.';
 
-const S = {
-  Card: styled.div<TeaserCardProps>`
-    box-shadow: 0 0 0 1px ${tokens.color.neutral.grey['400']};
-    border-radius: 8px;
-    display: flex;
-    height: 100%;
+const Card = styled.div<CardProps>`
+  box-shadow: 0 0 0 1px ${tokens.color.neutral.grey['400']};
+  border-radius: 8px;
+  display: flex;
+  height: 100%;
 
-    ${props => css`
-      flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
-      max-width: ${props.alignment === 'vertical' ? '600px' : '1320px'};
-    `}
+  ${props => css`
+    flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
+    max-width: ${props.alignment === 'vertical' ? '600px' : '1320px'};
+  `}
 
-    &:hover {
-      box-shadow: 0 0 0 2px ${tokens.color.neutral.grey['800']};
-    }
-  `,
-  Link: styled.a<TeaserCardProps>`
-    background-color: white;
-    border-radius: 8px;
-    transition: 0.15s all;
-    cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 0 2px ${tokens.color.neutral.grey['800']};
+  }
+`;
+
+const Link = styled.a<LinkProps>`
+  background-color: white;
+  border-radius: 8px;
+  transition: 0.15s all;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
+
+  &:hover {
     color: inherit;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    height: 100%;
+    background-color: ${tokens.color.brand.third['200']};
+  }
 
-    &:hover {
-      color: inherit;
-    }
+  ${props => css`
+    flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
+  `}
+`;
 
-    ${props => css`
-      flex-direction: ${props.alignment === 'vertical' ? 'column' : 'row'};
-    `}
-  `,
-  ImageContainer: styled.div<TeaserCardProps>`
-    flex: ${props => (props.alignment === 'vertical' ? 'auto' : '0 0 50%')};
-  `,
-  Image: styled.img<TeaserCardProps>`
-    width: 100%;
-    border-radius: ${props =>
-      props.alignment === 'vertical' ? '8px 8px 0 0' : '8px 0 0 8px'};
-    display: block;
-  `,
-  TextContainer: styled.div`
-    padding: 32px;
-    flex: 1 1 50%;
+const ImageContainer = styled.div<ImageContainerProps>`
+  flex: ${props => (props.alignment === 'vertical' ? 'auto' : '0 0 50%')};
+`;
 
-    p {
-      margin-bottom: 0;
-    }
-  `,
-  MetaContainer: styled.div`
-    display: flex;
-  `,
-  MetaItem: styled(Body)`
-    margin-right: 16px;
-    margin-top: -8px;
-    &:last-child {
-      margin-right: 0;
-    }
-  `,
-};
+const Image = styled.img<ImageProps>`
+  width: 100%;
+  border-radius: ${props =>
+    props.alignment === 'vertical' ? '8px 8px 0 0' : '8px 0 0 8px'};
+  display: block;
+`;
+
+const TextContainer = styled.div`
+  padding: 32px;
+  flex: 1 1 50%;
+`;
+
+const MetaContainer = styled.div`
+  display: flex;
+`;
+
+const MetaItem = styled(Body)`
+  margin-right: 16px;
+  margin-top: -8px;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
 
 export const TeaserCard: FC<TeaserCardProps> = ({
   title = defaultTitle,
   desc = defaultDesc,
   imageSrc,
   alignment = 'vertical',
-  meta = [],
+  metaItems = [],
 }) => {
-  const metaItems = meta.map(item => (
-    <S.MetaItem key={item} size="200">
+  const getMetaItems = metaItems.map(item => (
+    <MetaItem key={item} size="200">
       {item}
-    </S.MetaItem>
+    </MetaItem>
   ));
   return (
-    <S.Card alignment={alignment}>
-      <S.Link alignment={alignment}>
+    <Card alignment={alignment}>
+      <Link alignment={alignment}>
         {imageSrc && (
-          <S.ImageContainer alignment={alignment}>
-            <S.Image alignment={alignment} src={imageSrc} alt="" />
-          </S.ImageContainer>
+          <ImageContainer alignment={alignment}>
+            <Image alignment={alignment} src={imageSrc} alt="" />
+          </ImageContainer>
         )}
-        <S.TextContainer>
+        <TextContainer>
           <TitleIcon>{title}</TitleIcon>
-          {meta.length > 0 && <S.MetaContainer>{metaItems}</S.MetaContainer>}
+          {metaItems.length > 0 && (
+            <MetaContainer>{getMetaItems}</MetaContainer>
+          )}
           <Body size={alignment === 'vertical' ? '300' : '400'}>{desc}</Body>
-        </S.TextContainer>
-      </S.Link>
-    </S.Card>
+        </TextContainer>
+      </Link>
+    </Card>
   );
 };

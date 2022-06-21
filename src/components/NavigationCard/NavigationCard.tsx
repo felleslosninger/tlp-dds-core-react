@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import { Heading, Body } from '../Typography';
 import tokens from '../../utils/tokens';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/pro-regular-svg-icons';
+import FeatherIcon from 'feather-icons-react';
 
 export interface NavigationCardProps {
   title?: string;
@@ -57,7 +56,7 @@ export const NavigationCard: FC<NavigationCardProps> = ({
         {title}
       </S.Heading>
       <Body size="300">{desc}</Body>
-      <FontAwesomeIcon fontSize="24px" icon={faArrowRight} />
+      <FeatherIcon size="28" icon="arrow-right" />
     </S.Card>
   );
 };
