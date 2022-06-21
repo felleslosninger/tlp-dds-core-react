@@ -1,9 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import {
-  NavigationCard,
-  NavigationCardProps,
-} from '../src/components/NavigationCard/NavigationCard';
+import { NavigationCard, NavigationCardProps } from '../../.';
 import FeatherIcon from 'feather-icons-react';
 
 export default {

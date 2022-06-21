@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { Button } from './Button';
+import { render, screen } from '@testing-library/react';
 
 describe('Button', () => {
   it('renders without crashing', () => {
-    shallow(<Button>Click here</Button>);
+    render(<Button>Click here</Button>);
   });
 
   it('has text', () => {
-    const button = shallow(<Button>Click here</Button>);
-    expect(button.text()).toEqual('Click here');
+    render(<Button>Click here</Button>);
+    expect(screen.getByRole('button')).toHaveTextContent('Click here');
   });
 });

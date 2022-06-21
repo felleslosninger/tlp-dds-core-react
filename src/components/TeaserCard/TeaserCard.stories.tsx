@@ -1,9 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import {
-  TeaserCard,
-  TeaserCardProps,
-} from '../src/components/TeaserCard/TeaserCard';
+import { TeaserCard, TeaserCardProps } from '../../.';
 
 const meta: Meta = {
   title: 'Teaser Card',
@@ -31,5 +28,5 @@ export const Default = Template.bind({});
 Default.args = {
   imageSrc: 'img/png/five.jpg',
   alignment: 'vertical',
-  meta: ['16. des 2022'],
+  metaItems: ['16. des 2022'],
 };

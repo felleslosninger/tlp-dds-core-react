@@ -3,12 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import GlobalStyle from '../src/styles/globalStyles';
 import { Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAlicorn,
-  faDragon,
-  faBurgerCheese,
-} from '@fortawesome/pro-light-svg-icons';
+import FeatherIcon from 'feather-icons-react';
 
 import { NavigationCard, Banner, Section, Header, TeaserCard } from '../.';
 
@@ -23,7 +18,7 @@ const App = () => {
           <Col xl={4}>
             <TeaserCard
               imageSrc="img/png/one.jpg"
-              meta={['16. des 2022']}
+              metaItems={['16. des 2022']}
             ></TeaserCard>
           </Col>
           <Col xl={4}>
@@ -39,7 +34,7 @@ const App = () => {
           <Col xl={12}>
             <TeaserCard
               imageSrc="img/png/one.jpg"
-              meta={['16. des 2022']}
+              metaItems={['16. des 2022']}
               alignment="horizontal"
             ></TeaserCard>
           </Col>
@@ -50,19 +45,19 @@ const App = () => {
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FontAwesomeIcon fontSize="48px" icon={faAlicorn} />}
+              icon={<FeatherIcon size="44" icon="sun" />}
             ></NavigationCard>
           </Col>
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FontAwesomeIcon fontSize="48px" icon={faBurgerCheese} />}
+              icon={<FeatherIcon size="44" icon="clock" />}
             ></NavigationCard>
           </Col>
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FontAwesomeIcon fontSize="48px" icon={faDragon} />}
+              icon={<FeatherIcon size="44" icon="gift" />}
             ></NavigationCard>
           </Col>
         </Row>
