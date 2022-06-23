@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import tokens from '../../utils/tokens';
-import { TitleIcon } from '../TitleIcon/TitleIcon';
-import { Body } from '../Typography';
+import tokens from '../../../core/utils/tokens';
+import { TitleIcon } from '../../../core/components/TitleIcon/TitleIcon';
+import { Body } from '../../../core/Typography';
 
 export interface TeaserCardProps {
   title?: string;
@@ -28,7 +28,7 @@ interface ImageProps {
   alignment?: 'vertical' | 'horizontal';
 }
 
-const defaultTitle: string = 'Her er årets tre beste offentlige innovasjone';
+const defaultTitle: string = 'Her er årets tre beste offentlige innovasjone1';
 const defaultDesc: string =
   'I august blir det klart hvem som har gjennomført det aller beste digitaliseringsprosjektet i offentlig sektor. Nå er de tre finalistene til Digitaliseringsprisen 2022 klare.';
 

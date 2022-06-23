@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import tokens from '../../utils/tokens';
+import tokens from '../../../core/utils/tokens';
 
 export interface BannerProps {}
 

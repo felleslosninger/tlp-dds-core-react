@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { TeaserCard, TeaserCardProps } from '../../.';
+import { TeaserCard, TeaserCardProps } from '../../../index';
 
 const meta: Meta = {
-  title: 'Teaser Card',
+  title: 'Web/Teaser Card',
   component: TeaserCard,
   argTypes: {
     children: {

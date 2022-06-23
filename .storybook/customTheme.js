@@ -1,10 +1,9 @@
-import { create } from '@storybook/theming'
-import logo from '../assets/logo_digdir.svg'
-import tokens from '../node_modules/@digdir/ds-tokens/build/tokens.js'
+import { create } from '@storybook/theming';
+import logo from '../assets/logo_digdir.svg';
+import tokens from '../node_modules/@digdir/ds-tokens/build/tokens.js';
 
 export default create({
   brandTitle: 'Digdir websider',
-  brandUrl: 'https://profilveileder.digdir.no/',
   brandImage: logo,
   fontBase: '"Inter", sans-serif',
   // Colors
@@ -12,4 +11,4 @@ export default create({
   colorSecondary: tokens.color.brand.third['800'],
   appBg: tokens.color.neutral.grey['100'],
   textColor: tokens.color.text.background.light,
-})
+});

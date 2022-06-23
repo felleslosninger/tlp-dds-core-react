@@ -1,0 +1,180 @@
+@use '../../../node_modules/@digdir/ds-tokens/build/tokens' as tokens;
+@use 'base/utils' as utils;
+
+// General font mixin
+@mixin font($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// Specific text class mixins
+@mixin text-body-100 {
+  @include font(
+                  tokens.$font-size-100,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-20
+  );
+}
+
+@mixin text-body-200 {
+  @include font(
+                  tokens.$font-size-200,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-30
+  );
+}
+
+@mixin text-body-300 {
+  @include font(
+                  tokens.$font-size-300,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-30
+  );
+}
+
+@mixin text-body-400 {
+  @include font(
+                  tokens.$font-size-400,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-30
+  );
+}
+
+// Heading
+@mixin text-heading-500 {
+  @include font(
+                  tokens.$font-size-500,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-20
+  );
+}
+
+@mixin text-heading-600 {
+  @include font(
+                  tokens.$font-size-600,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-20
+  );
+}
+
+@mixin text-heading-700 {
+  @include font(
+                  tokens.$font-size-700,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-20
+  );
+}
+
+@mixin text-heading-800 {
+  @include font(
+                  tokens.$font-size-800,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-10
+  );
+}
+
+@mixin text-heading-900 {
+  @include font(
+                  tokens.$font-size-900,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-10
+  );
+}
+
+// Ingress
+@mixin text-ingress-500 {
+  @include font(
+                  tokens.$font-size-500,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-30
+  );
+}
+@mixin text-ingress-600 {
+  @include font(
+                  tokens.$font-size-600,
+                  tokens.$font-weight-regular,
+                  tokens.$font-line-height-40
+  );
+}
+
+// Interface
+@mixin text-interface-200 {
+  @include font(
+                  tokens.$font-size-200,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-10
+  );
+}
+@mixin text-interface-300 {
+  @include font(
+                  tokens.$font-size-300,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-10
+  );
+}
+@mixin text-interface-400 {
+  @include font(
+                  tokens.$font-size-400,
+                  tokens.$font-weight-medium,
+                  tokens.$font-line-height-10
+  );
+}
+
+// Text classes
+// Body
+.#{utils.$prefix}-text-body-100 {
+  @include text-body-100();
+}
+
+.#{utils.$prefix}-text-body-200 {
+  @include text-body-200();
+}
+
+.#{utils.$prefix}-text-body-300 {
+  @include text-body-300();
+}
+
+.#{utils.$prefix}-text-body-400 {
+  @include text-body-400();
+}
+
+// Heading
+.#{utils.$prefix}-text-heading-500 {
+  @include text-heading-500();
+}
+
+.#{utils.$prefix}-text-heading-600 {
+  @include text-heading-600();
+}
+
+.#{utils.$prefix}-text-heading-700 {
+  @include text-heading-700();
+}
+
+.#{utils.$prefix}-text-heading-800 {
+  @include text-heading-800();
+}
+
+.#{utils.$prefix}-text-heading-900 {
+  @include text-heading-900();
+}
+
+// Ingress
+.#{utils.$prefix}-text-ingress-500 {
+  @include text-ingress-500();
+}
+.#{utils.$prefix}-text-ingress-600 {
+  @include text-ingress-600();
+}
+
+// Interface
+.#{utils.$prefix}-text-interface-200 {
+  @include text-interface-200();
+}
+.#{utils.$prefix}-text-interface-300 {
+  @include text-interface-300();
+}
+.#{utils.$prefix}-text-interface-400 {
+  @include text-interface-400();
+}

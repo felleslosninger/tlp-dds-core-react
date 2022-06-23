@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+$prefix: 'dds';
+
+/*
+  Convert from pixel value to rem value.
+  Based on browser default where 1rem = 16px.
+*/
+@function pxToRem($px) {
+  @return math.div($px, 16px) * 1rem;
+}

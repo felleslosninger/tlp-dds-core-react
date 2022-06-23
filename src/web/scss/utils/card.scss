@@ -1,0 +1,43 @@
+@use "../../../core/scss/typograpgy" as typography;
+@use '@digdir/ds-tokens/build/tokens.scss' as tokens;
+@use 'utils.scss' as utils;
+
+@mixin container-link($background-color: tokens.$color-neutral-white) {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+
+  text-decoration: none;
+  background-color: $background-color;
+  transition: tokens.$duration-normal all;
+}
+
+@mixin border-box-shadow($color: tokens.$color-interface-interaction) {
+  box-shadow: inset 0 0 0 4px $color;
+}
+
+// Element mixins
+@mixin title {
+  @include typography.text-heading-500();
+  color: tokens.$color-text-background-light;
+  margin: 0;
+}
+
+@mixin paragraph {
+  @include typography.text-body-300();
+  color: tokens.$color-text-background-light;
+  margin: 0;
+}
+
+@mixin line-clamp($max-lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $max-lines;
+  overflow: hidden;
+}
+
+@mixin icon-link-hover {
+  text-decoration-thickness: tokens.$border-width-default;
+  text-decoration-color: tokens.$color-neutral-grey-600;
+}

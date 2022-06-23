@@ -1,0 +1,48 @@
+@use 'sass:math';
+@use '../../../../node_modules/@digdir/ds-tokens/build/tokens' as tokens;
+
+// Variables
+// Class prefix: digdir design system web (digdir nettsider)
+$prefix: 'ddsweb';
+$padding-default: tokens.$spacing-base-8;
+$padding-mobile: tokens.$spacing-base-6;
+
+// Functions
+/*
+  Convert from pixel value to rem value.
+  Based on browser default where 1rem = 16px.
+*/
+@function pxToRem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+// Mixins
+@mixin mobile {
+  @media (max-width: tokens.$breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin large-mobile {
+  @media (max-width: tokens.$breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: tokens.$breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: tokens.$breakpoint-x-large) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: tokens.$breakpoint-2x-large) {
+    @content;
+  }
+}

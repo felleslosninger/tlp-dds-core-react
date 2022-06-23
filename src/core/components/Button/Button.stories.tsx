@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { Button, ButtonProps } from '../../.';
+import { Button, ButtonProps } from '../../../index';
 
 export default {
-  title: 'Button',
+  title: 'Core/Button',
   component: Button,
   argTypes: {
     text: {
@@ -11,7 +11,7 @@ export default {
         type: 'text',
       },
     },
-    type1: {
+    variation: {
       options: ['primary', 'secondary'],
       control: { type: 'radio' },
     },
@@ -35,14 +35,14 @@ const Template: Story<ButtonProps> = args => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  type1: 'primary',
+  variation: 'primary',
   size: 'md',
   fontSize: '16px',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  type1: 'secondary',
+  variation: 'secondary',
   size: 'md',
   fontSize: '16px',
 };

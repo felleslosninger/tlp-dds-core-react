@@ -1,0 +1,11 @@
+@use '../../../../node_modules/@digdir/ds-tokens/build/tokens' as tokens;
+@use "font";
+
+body {
+  font-family: "Inter", sans-serif;
+  color: tokens.$color-neutral-grey-800;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}

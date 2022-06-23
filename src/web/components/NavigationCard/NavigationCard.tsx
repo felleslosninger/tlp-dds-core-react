@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { Heading, Body } from '../Typography';
-import tokens from '../../utils/tokens';
-import FeatherIcon from 'feather-icons-react';
+import { Heading, Body } from '../../../core/Typography';
+import tokens from '../../../core/utils/tokens';
+import { ArrowRight } from 'react-feather';
 
 export interface NavigationCardProps {
   title?: string;
@@ -56,7 +56,7 @@ export const NavigationCard: FC<NavigationCardProps> = ({
         {title}
       </S.Heading>
       <Body size="300">{desc}</Body>
-      <FeatherIcon size="28" icon="arrow-right" />
+      <ArrowRight size={48} />
     </S.Card>
   );
 };

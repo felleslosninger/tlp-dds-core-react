@@ -1,0 +1,44 @@
+@use '../../../../node_modules/@digdir/ds-tokens/build/tokens' as tokens;
+@use '../../../core/scss/typograpgy' as typography;
+
+$blockName: 'ddsweb-image-section';
+
+.#{$blockName} {
+  background-color: white;
+  padding: tokens.$spacing-10 0;
+  position: relative;
+  overflow: hidden;
+
+  &--grey {
+    background-color: tokens.$color-neutral-grey-100;
+  }
+
+  &--red {
+    background-color: tokens.$color-brand-first-200;
+  }
+
+  &--yellow {
+    background-color: tokens.$color-brand-second-200;
+  }
+
+  &--blue {
+    background-color: tokens.$color-brand-third-200;
+  }
+
+  &__img {
+    height: 260px;
+    max-width: 100%;
+  }
+
+  &__title {
+    @include typography.text-heading-800;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
+  }
+
+  &__desc {
+    @include typography.text-ingress-500;
+    margin-top: 0;
+    margin-bottom: tokens.$spacing-3;
+  }
+}

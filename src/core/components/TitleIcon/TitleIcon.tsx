@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Heading } from '../Typography';
-import FeatherIcon from 'feather-icons-react';
+import { Heading } from '../../Typography';
+import { ArrowRight } from 'react-feather';
 
 export interface TitleIconProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export const TitleIcon: FC<TitleIconProps> = ({ children }) => {
   return (
     <Styled.Heading size="500">
       {children}
-      <FeatherIcon icon="arrow-right" />
+      <ArrowRight />
     </Styled.Heading>
   );
 };

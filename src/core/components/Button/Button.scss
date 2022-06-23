@@ -1,0 +1,42 @@
+@use '../../../../node_modules/@digdir/ds-tokens/build/tokens' as tokens;
+@use '../../scss/base/utils' as utils;
+
+$blockName: '#{utils.$prefix}-button';
+
+.#{$blockName} {
+  border: 2px solid tokens.$color-neutral-grey-800;
+  background-color: tokens.$color-neutral-grey-800;
+  color: white;
+  display: inline-block;
+  border-radius: 56px;
+  transition: 0.15s all;
+  cursor: pointer;
+  font-weight: 500;
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: tokens.$color-interface-interaction-light;
+    color: tokens.$color-neutral-grey-800;
+  }
+
+  &--sm {
+    height: 40px;
+    padding: 0 20px;
+  }
+
+  &--lg {
+    height: 56px;
+    padding: 0 40px;
+  }
+
+  &--secondary {
+    background-color: white;
+    color: tokens.$color-neutral-grey-800;
+  }
+
+  &--disabled {
+
+  }
+}

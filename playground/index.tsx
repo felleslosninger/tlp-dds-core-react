@@ -1,9 +1,9 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import GlobalStyle from '../src/styles/globalStyles';
+import GlobalStyle from '../src/core/styles/globalStyles';
 import { Col, Row } from 'react-bootstrap';
-import FeatherIcon from 'feather-icons-react';
+import { Sun, Clock, Gift } from 'react-feather';
 
 import { NavigationCard, Banner, Section, Header, TeaserCard } from '../.';
 
@@ -45,19 +45,19 @@ const App = () => {
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FeatherIcon size="44" icon="sun" />}
+              icon={<Sun size={44} />}
             ></NavigationCard>
           </Col>
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FeatherIcon size="44" icon="clock" />}
+              icon={<Clock size={44} />}
             ></NavigationCard>
           </Col>
           <Col xl={4}>
             <NavigationCard
               backgroundColor="yellow"
-              icon={<FeatherIcon size="44" icon="gift" />}
+              icon={<Gift size={44} />}
             ></NavigationCard>
           </Col>
         </Row>

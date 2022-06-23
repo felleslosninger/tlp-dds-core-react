@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
-import tokens from '../utils/tokens';
+import tokens from './utils/tokens';
 
 export interface HeadingProps {
   /*

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import tokens from '../../utils/tokens';
-import { Heading, Ingress } from '../Typography';
+import tokens from '../../../core/utils/tokens';
+import { Heading, Ingress } from '../../../core/Typography';
 import { Container, Row, Col } from 'react-bootstrap';
 
 export interface SectionProps {

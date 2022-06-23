@@ -4,6 +4,8 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/theming',
+    '@whitespace/storybook-addon-html',
+    '@storybook/addon-a11y',
   ],
   staticDirs: ['../assets'],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
